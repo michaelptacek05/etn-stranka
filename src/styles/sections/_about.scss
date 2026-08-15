@@ -8,15 +8,27 @@
         margin-bottom: 1.5rem;
     }
 
+    &__figure {
+        // vytvoří nový block formatting context, takže obsahuje výšku
+        // floatované fotky a .about__body pak vždy začíná až pod ní
+        overflow: hidden;
+    }
+
     &__photo {
         float: left;
         width: 100%;
-        margin-right: 2rem;
+        margin-right: 0;
         margin-bottom: 1rem;
         shape-outside: margin-box;
 
+        @include v.mq(sm) {
+            width: 16rem;
+            margin-right: 1.5rem;
+        }
+
         @include v.mq(md) {
             width: 20rem;
+            margin-right: 2rem;
         }
     }
 

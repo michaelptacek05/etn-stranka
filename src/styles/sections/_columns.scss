@@ -1,0 +1,76 @@
+@use "../variables" as v;
+
+.columns {
+    background-color: var(--c-bg-alt);
+    padding-block: 3rem;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        @include v.mq(md) {
+            flex-direction: row;
+            gap: 4rem;
+        }
+    }
+
+    &__col {
+        flex: 1 1 0%;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+    }
+
+    &__lead {
+        margin-bottom: 1.5rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        li {
+            padding-left: 2rem;
+        }
+    }
+
+    &__list--check li {
+        position: relative;
+        list-style: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.15em;
+            width: 1.25rem;
+            height: 1.25rem;
+            background: no-repeat center / contain;
+            // barva fajfky je zapečená v datovém URI (SVG fill nejde
+            // navázat na $color-primary), při změně brandové barvy
+            // aktualizovat i tady
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23e84e0e'%3E%3Cpath d='M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z'/%3E%3C/svg%3E");
+        }
+    }
+
+    &__list--numbered {
+        counter-reset: columns-counter;
+
+        li {
+            position: relative;
+            counter-increment: columns-counter;
+            list-style: none;
+
+            &::before {
+                content: counter(columns-counter) ".";
+                position: absolute;
+                left: 0;
+                color: var(--c-primary);
+                font-weight: 700;
+            }
+        }
+    }
+}

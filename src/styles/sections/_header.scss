@@ -8,6 +8,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-direction: column;
         gap: 1.5rem;
         padding-block: 1.5rem;
     }
