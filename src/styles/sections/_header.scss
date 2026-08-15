@@ -1,0 +1,115 @@
+@use "../variables" as v;
+
+.header {
+    background-color: var(--c-bg);
+    z-index: 999;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-block: 1.5rem;
+    }
+
+    &__logo {
+        display: block;
+        flex-shrink: 0;
+    }
+
+    &__logo-img {
+        height: 1.75rem;
+        width: auto;
+    }
+
+    &__toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        z-index: 10;
+
+        span {
+            display: block;
+            height: 2px;
+            background-color: var(--c-text);
+            transition: opacity 0.2s ease;
+        }
+
+        @include v.mq(lg) {
+            display: none;
+        }
+    }
+}
+
+.header--nav-open .header__toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-bg);
+    visibility: hidden;
+    transform: translateX(100%);
+    transition:
+        transform 0.3s ease,
+        visibility 0s linear 0.3s;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    &__link {
+        display: inline-block;
+        padding-block: 0.25rem;
+        font-size: v.$font-size-h2;
+        font-weight: 400;
+        
+        text-transform: uppercase;
+        color: var(--c-text);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--c-primary);
+            text-decoration: underline;
+            text-underline-offset: 0.3em;
+        }
+    }
+
+    @include v.mq(lg) {
+        position: static;
+        inset: auto;
+        display: block;
+        background-color: transparent;
+        visibility: visible;
+        transform: none;
+        transition: none;
+
+        &__list {
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        &__link {
+            font-size: v.$font-size-small;
+        }
+    }
+}
+
+.header--nav-open .nav {
+    visibility: visible;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}

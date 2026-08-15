@@ -1,5 +1,9 @@
-function helloWorld(): void {
-    console.log("Hello, World!");
-}
+import "./styles/main.scss";
+import { initNav } from "./components/nav";
+import { initSlider } from "./components/slider";
 
-helloWorld();
+const header = document.querySelector<HTMLElement>(".header");
+if (header) initNav(header);
+
+const hero = document.querySelector<HTMLElement>(".hero");
+if (hero) initSlider(hero);

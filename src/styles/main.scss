@@ -1,0 +1,71 @@
+@use "variables" as v;
+@use "sections/header";
+@use "sections/hero";
+@use "sections/strip";
+@use "sections/about";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: v.$font-size-body;
+    line-height: v.$line-height-base;
+    color: var(--c-text);
+    background-color: var(--c-bg);
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2 {
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: v.$font-size-h1;
+}
+
+h2 {
+    font-size: v.$font-size-h2;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: v.$container-width;
+    margin-inline: auto;
+    padding-inline: v.$container-padding;
+}
