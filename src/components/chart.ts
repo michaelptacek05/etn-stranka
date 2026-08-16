@@ -16,16 +16,20 @@ export function initChart(root: HTMLElement): void {
             `${point.hour} — ${chartLabels[point.level]}`,
         );
 
+        const track = document.createElement("span");
+        track.className = "chart__bar-track";
+
         const bar = document.createElement("span");
         bar.className = `chart__bar chart__bar--${point.level}`;
         bar.style.setProperty("--value", String(point.value));
+        track.append(bar);
 
         const label = document.createElement("span");
         label.className = "chart__bar-label";
         label.textContent = point.hour;
         label.setAttribute("aria-hidden", "true");
 
-        item.append(bar, label);
+        item.append(track, label);
         list.append(item);
     }
 }
