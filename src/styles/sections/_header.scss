@@ -21,7 +21,7 @@
     }
 
     &__logo-img {
-        height: 1.75rem;
+        height: 3.5rem;
         width: auto;
     }
 
@@ -90,19 +90,36 @@
     }
 
     &__link {
+        position: relative;
         display: inline-block;
         padding-block: 0.25rem;
-        font-size: v.$font-size-h2;
+        font-size: 1.375rem;
         font-weight: 400;
-                
+
         text-transform: uppercase;
         color: var(--c-text);
 
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--c-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
         &:hover,
-        &:focus-visible {
+        &:focus-visible,
+        &--active {
             color: var(--c-primary);
-            text-decoration: underline;
-            text-underline-offset: 0.3em; 
+
+            &::after {
+                transform: scaleX(1);
+            }
         }
     }
 

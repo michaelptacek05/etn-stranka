@@ -3,17 +3,26 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preload" href="/fonts/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin>
+        <link
+            rel="preload"
+            href="/fonts/OpenSans-Light.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
         <title>Etnetera</title>
-        <meta name="description" content="Etnetera vyvíjí a provozuje technologicky inovativní projekty v oblasti zakázkového vývoje softwaru." />
-        <link rel="canonical" href="" />
+        <meta
+            name="description"
+            content="Etnetera vyvíjí a provozuje technologicky inovativní projekty v oblasti zakázkového vývoje softwaru."
+        />
+        <link rel="canonical" href="https://michaelptacek05.github.io/etn-stranka/" />
         <meta name="robots" content="noindex, nofollow" />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content="" />
         <meta property="og:description" content="" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="" />
+        <meta property="og:url" content="https://michaelptacek05.github.io/etn-stranka/" />
+        <meta property="og:image" content="https://michaelptacek05.github.io/etn-stranka/etnetera-barevne.webp" />
         <meta name="twitter:card" content="summary_large_image" />
     </head>
     <body>
@@ -53,7 +62,12 @@
                         <li><a href="#" class="nav__link">Co děláme</a></li>
                         <li><a href="#" class="nav__link">Reference</a></li>
                         <li>
-                            <a href="#" class="nav__link">Práce u nás</a>
+                            <a
+                                href="#"
+                                class="nav__link nav__link--active"
+                                aria-current="page"
+                                >Práce u nás (4)</a
+                            >
                         </li>
                         <li><a href="#" class="nav__link">Kontakt</a></li>
                     </ul>
@@ -66,6 +80,16 @@
                 aria-roledescription="carousel"
                 aria-label="Úvodní carousel"
             >
+                <img
+                    class="hero__bg"
+                    src="/background.webp"
+                    alt=""
+                    width="1400"
+                    height="647"
+                    fetchpriority="high"
+                />
+                <div class="hero__overlay"></div>
+
                 <div class="hero__track">
                     <article
                         class="hero__slide"
@@ -73,14 +97,6 @@
                         aria-roledescription="slide"
                         aria-label="1 z 3"
                     >
-                        <img
-                            class="hero__bg"
-                            src="/background.webp"
-                            alt=""
-                            width="1400"
-                            height="647"
-                            fetchpriority="high"
-                        />
                         <div class="hero__content container">
                             <h1>Přidej se v Etneteře mezi kodéry</h1>
                             <p>
@@ -102,13 +118,6 @@
                         aria-label="2 z 3"
                         inert
                     >
-                        <img
-                            class="hero__bg"
-                            src="/background.webp"
-                            alt=""
-                            width="1400"
-                            height="647"
-                        />
                         <div class="hero__content container">
                             <h1>Přidej se v Etneteře mezi kodéry</h1>
                             <p>
@@ -130,13 +139,6 @@
                         aria-label="3 z 3"
                         inert
                     >
-                        <img
-                            class="hero__bg"
-                            src="/background.webp"
-                            alt=""
-                            width="1400"
-                            height="647"
-                        />
                         <div class="hero__content container">
                             <h1>Přidej se v Etneteře mezi kodéry</h1>
                             <p>
@@ -152,20 +154,22 @@
                     </article>
                 </div>
 
-                <button
-                    type="button"
-                    class="hero__nav hero__nav--prev"
-                    aria-label="Předchozí slide"
-                >
-                    ‹
-                </button>
-                <button
-                    type="button"
-                    class="hero__nav hero__nav--next"
-                    aria-label="Další slide"
-                >
-                    ›
-                </button>
+                <div class="hero__nav-group">
+                    <button
+                        type="button"
+                        class="hero__nav hero__nav--prev"
+                        aria-label="Předchozí slide"
+                    >
+                        ‹
+                    </button>
+                    <button
+                        type="button"
+                        class="hero__nav hero__nav--next"
+                        aria-label="Další slide"
+                    >
+                        ›
+                    </button>
+                </div>
 
                 <p class="visually-hidden hero__status" role="status"></p>
             </section>
@@ -176,7 +180,9 @@
                         Jiří Štěpán z Etnetera Activate poodhalil zákulisí
                         vykutálené náborové kampaně.
                     </p>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Přečíst</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                        >Přečíst</a
+                    >
                 </article>
             </section>
             <section class="about">
@@ -247,56 +253,61 @@
             <section class="charts">
                 <div class="charts__inner container">
                     <div class="charts__group">
-                    <h2 class="charts__title">Návštěvnost firmy</h2>
+                        <h2 class="charts__title">Návštěvnost firmy</h2>
 
-                    <div class="chart">
-                        <div class="chart__icons">
-                            <img
-                                class="chart__logo"
-                                src="/etnetera-small.svg"
-                                alt=""
-                                aria-hidden="true"
-                                width="30"
-                                height="40"
-                            />
-                            <svg
-                                class="chart__icon"
-                                viewBox="0 0 24 24"
-                                width="20"
-                                height="20"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.5"
-                                aria-hidden="true"
-                                focusable="false"
-                            >
-                                <circle cx="12" cy="12" r="9" />
-                                <path
-                                    d="M12 7v5l3 2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                        <div class="chart">
+                            <div class="chart__icons">
+                                <img
+                                    class="chart__logo"
+                                    src="/etnetera-small.svg"
+                                    alt=""
+                                    aria-hidden="true"
+                                    width="30"
+                                    height="40"
                                 />
-                            </svg>
+                                <svg
+                                    class="chart__icon"
+                                    viewBox="0 0 24 24"
+                                    width="20"
+                                    height="20"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path
+                                        d="M12 7v5l3 2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <ul class="chart__bars"></ul>
                         </div>
 
-                        <ul class="chart__bars"></ul>
-                    </div>
-
-                    <ul class="chart__legend">
-                        <li class="chart__legend-item chart__legend-item--low">
-                            <span class="chart__legend-dot"></span>bez fronty
-                        </li>
-                        <li
-                            class="chart__legend-item chart__legend-item--medium"
-                        >
-                            <span class="chart__legend-dot"></span>možnost
-                            fronty
-                        </li>
-                        <li class="chart__legend-item chart__legend-item--high">
-                            <span class="chart__legend-dot"></span>pravděpodobné
-                            čekání ve frontě
-                        </li>
-                    </ul>
+                        <ul class="chart__legend">
+                            <li
+                                class="chart__legend-item chart__legend-item--low"
+                            >
+                                <span class="chart__legend-dot"></span>bez
+                                fronty
+                            </li>
+                            <li
+                                class="chart__legend-item chart__legend-item--medium"
+                            >
+                                <span class="chart__legend-dot"></span>možnost
+                                fronty
+                            </li>
+                            <li
+                                class="chart__legend-item chart__legend-item--high"
+                            >
+                                <span class="chart__legend-dot"></span
+                                >pravděpodobné čekání ve frontě
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>

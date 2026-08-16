@@ -2,14 +2,20 @@
 
 .hero {
     position: relative;
-    height: 32rem;
     overflow: hidden;
+
+    @include v.mq(md) {
+        height: 32rem;
+    }
 }
 
 .hero__track {
     display: flex;
-    height: 100%;
     transition: transform 0.4s ease;
+
+    @include v.mq(md) {
+        height: 100%;
+    }
 }
 
 .hero__slide {
@@ -18,6 +24,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-block: 5rem 6rem;
+
+    @include v.mq(md) {
+        padding-block: 0;
+    }
 }
 
 .hero__bg {
@@ -29,8 +40,7 @@
     z-index: -2;
 }
 
-.hero__slide::before {
-    content: "";
+.hero__overlay {
     position: absolute;
     inset: 0;
     background-color: rgba(255, 255, 255, 0.75);
@@ -41,21 +51,31 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1.25rem;
 
     .hero & {
-        padding-inline: 3rem;
+        @include v.mq(md) {
+            padding-inline: 3rem;
+        }
     }
 
     p{
         max-width: 60ch;
     }
+
+    @include v.mq(md) {
+        gap: 2rem;
+    }
+}
+
+.hero__nav-group {
+    display: contents;
 }
 
 .hero__nav {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 1.5rem;
+    padding-block: 0.5rem;
     font-size: 2rem;
     line-height: 1;
     color: var(--c-text);
@@ -65,12 +85,26 @@
         color: var(--c-primary);
     }
 
+    @include v.mq(md) {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
     &--prev {
-        left: 1.5rem;
+        left: 0.5rem;
+
+        @include v.mq(md) {
+            left: 1.5rem;
+        }
     }
 
     &--next {
-        right: 1.5rem;
+        right: 0.5rem;
+
+        @include v.mq(md) {
+            right: 1.5rem;
+        }
     }
 }
 
