@@ -80,6 +80,9 @@
 .chart__bar-label {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+    display: flex;
+    align-items: flex-start;
+    height: 2.25rem; // rezerva na nejdelší formát „HH:MM" (5 znaků) — díky pevné výšce začínají všechny popisky (a tím i paty sloupců) ve stejné úrovni
     font-size: v.$font-size-small;
     color: var(--c-text);
     white-space: nowrap;
