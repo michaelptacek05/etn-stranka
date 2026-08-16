@@ -1,0 +1,35 @@
+@use "../variables" as v;
+
+.footer {
+    padding-block: 3rem;
+    text-align: center;
+
+    &__copyright {
+        margin-bottom: 0.5rem;
+        color: var(--c-primary);
+        font-size: v.$font-size-small;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    &__year {
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__member {
+        font-size: v.$font-size-small;
+    }
+
+    &__link {
+        color: var(--c-primary);
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: 0.3em;
+        }
+    }
+}

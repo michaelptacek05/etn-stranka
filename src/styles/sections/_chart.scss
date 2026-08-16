@@ -1,0 +1,113 @@
+@use "../variables" as v;
+
+.charts {
+    background-color: var(--c-bg-alt);
+    padding-block: 2.5rem;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    overflow-x: auto;
+    max-width: 100%;
+
+    &__icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__logo {
+        width: 2rem;
+        height: auto;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        color: rgba(0, 0, 0, 0.35);
+    }
+
+    &__bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+        height: 8rem;
+        list-style: none;
+    }
+}
+
+.chart__bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    height: 100%;
+}
+
+.chart__bar {
+    display: block;
+    width: 1.125rem;
+    height: calc(var(--value) * 1%);
+    min-height: 4px;
+    border-radius: 6px 6px 0 0;
+
+    &--low { background-color: var(--c-chartlvl-1); }
+    &--medium { background-color: var(--c-chartlvl-2); }
+    &--high { background-color: var(--c-chartlvl-3); }
+}
+
+.chart__bar-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: v.$font-size-small;
+    color: var(--c-text);
+    white-space: nowrap;
+}
+
+.chart__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1.25rem;
+    list-style: none;
+}
+
+.chart__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: v.$font-size-small;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.chart__legend-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.chart__legend-item--low .chart__legend-dot { background-color: var(--c-chartlvl-1); }
+.chart__legend-item--medium .chart__legend-dot { background-color: var(--c-chartlvl-2); }
+.chart__legend-item--high .chart__legend-dot { background-color: var(--c-chartlvl-3); }

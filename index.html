@@ -3,24 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preload" href="/fonts/OpenSans-Light.woff2" as="font" type="font/woff2" crossorigin>
         <title>Etnetera</title>
+        <meta name="description" content="Etnetera vyvíjí a provozuje technologicky inovativní projekty v oblasti zakázkového vývoje softwaru." />
+        <link rel="canonical" href="" />
+        <meta name="robots" content="noindex, nofollow" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta name="twitter:card" content="summary_large_image" />
     </head>
     <body>
         <header class="header">
             <div class="header__inner container">
                 <a href="/" class="header__logo">
                     <img
-                        src="/Group.svg"
+                        src="/etnetera-barevne.webp"
                         class="header__logo-img"
                         alt="Etnetera"
+                        width="985"
+                        height="472"
                     />
                 </a>
-                <button type="button" class="header__toggle">
+                <button
+                    type="button"
+                    class="header__toggle"
+                    aria-label="Otevřít menu"
+                    aria-expanded="false"
+                    aria-controls="site-nav"
+                >
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <nav class="nav">
+                <nav class="nav" id="site-nav">
+                    <button
+                        type="button"
+                        class="nav__close"
+                        aria-label="Zavřít menu"
+                    >
+                        &times;
+                    </button>
                     <ul class="nav__list">
                         <li><a href="#" class="nav__link">Domů</a></li>
                         <li><a href="#" class="nav__link">Kdo jsme</a></li>
@@ -35,15 +61,33 @@
             </div>
         </header>
         <main>
-            <section class="hero">
+            <section
+                class="hero"
+                aria-roledescription="carousel"
+                aria-label="Úvodní carousel"
+            >
                 <div class="hero__track">
-                    <article class="hero__slide">
-                        <img class="hero__bg" src="/background.png" alt="" />
+                    <article
+                        class="hero__slide"
+                        role="group"
+                        aria-roledescription="slide"
+                        aria-label="1 z 3"
+                    >
+                        <img
+                            class="hero__bg"
+                            src="/background.webp"
+                            alt=""
+                            width="1400"
+                            height="647"
+                            fetchpriority="high"
+                        />
                         <div class="hero__content container">
                             <h1>Přidej se v Etneteře mezi kodéry</h1>
                             <p>
                                 Čeká tě tým mladých lidí zapálených nejen do
-                                kódování…
+                                kódování. Nejsme žádný tiše pracující tým. Rádi
+                                si s tebou i během práce pokecáme, zajdeme na
+                                oběd nebo poradíme s problémem.
                             </p>
                             <a href="/o-nas" class="btn btn--outline"
                                 >Více o nás</a
@@ -51,13 +95,27 @@
                         </div>
                     </article>
 
-                    <article class="hero__slide" inert>
-                        <img class="hero__bg" src="/background.png" alt="" />
+                    <article
+                        class="hero__slide"
+                        role="group"
+                        aria-roledescription="slide"
+                        aria-label="2 z 3"
+                        inert
+                    >
+                        <img
+                            class="hero__bg"
+                            src="/background.webp"
+                            alt=""
+                            width="1400"
+                            height="647"
+                        />
                         <div class="hero__content container">
                             <h1>Přidej se v Etneteře mezi kodéry</h1>
                             <p>
                                 Čeká tě tým mladých lidí zapálených nejen do
-                                kódování…
+                                kódování. Nejsme žádný tiše pracující tým. Rádi
+                                si s tebou i během práce pokecáme, zajdeme na
+                                oběd nebo poradíme s problémem.
                             </p>
                             <a href="/o-nas" class="btn btn--outline"
                                 >Více o nás</a
@@ -65,13 +123,27 @@
                         </div>
                     </article>
 
-                    <article class="hero__slide" inert>
-                        <img class="hero__bg" src="/background.png" alt="" />
+                    <article
+                        class="hero__slide"
+                        role="group"
+                        aria-roledescription="slide"
+                        aria-label="3 z 3"
+                        inert
+                    >
+                        <img
+                            class="hero__bg"
+                            src="/background.webp"
+                            alt=""
+                            width="1400"
+                            height="647"
+                        />
                         <div class="hero__content container">
                             <h1>Přidej se v Etneteře mezi kodéry</h1>
                             <p>
                                 Čeká tě tým mladých lidí zapálených nejen do
-                                kódování…
+                                kódování. Nejsme žádný tiše pracující tým. Rádi
+                                si s tebou i během práce pokecáme, zajdeme na
+                                oběd nebo poradíme s problémem.
                             </p>
                             <a href="/o-nas" class="btn btn--outline"
                                 >Více o nás</a
@@ -80,12 +152,22 @@
                     </article>
                 </div>
 
-                <button type="button" class="hero__nav hero__nav--prev">
+                <button
+                    type="button"
+                    class="hero__nav hero__nav--prev"
+                    aria-label="Předchozí slide"
+                >
                     ‹
                 </button>
-                <button type="button" class="hero__nav hero__nav--next">
+                <button
+                    type="button"
+                    class="hero__nav hero__nav--next"
+                    aria-label="Další slide"
+                >
                     ›
                 </button>
+
+                <p class="visually-hidden hero__status" role="status"></p>
             </section>
             <section class="strip">
                 <article class="strip__text container">
@@ -94,7 +176,7 @@
                         Jiří Štěpán z Etnetera Activate poodhalil zákulisí
                         vykutálené náborové kampaně.
                     </p>
-                    <a href="#" target="_blank">Přečíst</a>
+                    <a href="#" target="_blank" rel="noopener noreferrer">Přečíst</a>
                 </article>
             </section>
             <section class="about">
@@ -102,161 +184,344 @@
                     <h2 class="about__title">Co jsme zač</h2>
                     <div class="about__figure">
                         <img
-                            src="building.png"
+                            src="/building.webp"
                             alt="Sídlo Etnetery v budově Ostrov, Praha 8"
                             class="about__photo"
+                            width="325"
+                            height="216"
                         />
                         <p class="about__text">
                             V roce 1997 si Martin a Vašek chtěli přivydělat při
                             studiu ČVUT. Založili firmu a brzy s překvapením
-                            zjistili, že mohou zaměstnat i své přátele, kteří sdílí
-                            jejich znalosti a smysl pro humor. Po 20+ letech
-                            úspěšného fungování je Etnetera přední společností v
-                            oblasti vývoje webových portálů a aplikací. Naším cílem
-                            je být jedničkou na českém trhu v tomto segmentu.
-                            Orientujeme se na dlouhodobá partnerství a hledání
-                            jedinečných řešení s přidanou hodnotou, která vás
-                            posunou vpřed. Naše sebedůvěra stojí na silném stabilním
-                            zázemí a zkušenostech z tisíce náročných projektů pro
+                            zjistili, že mohou zaměstnat i své přátele, kteří
+                            sdílí jejich znalosti a smysl pro humor. Po 20+
+                            letech úspěšného fungování je
+                            <b><a href="/">Etnetera</a></b>
+                            <b
+                                >přední společností v oblasti vývoje webových
+                                portálů a aplikací.</b
+                            >
+                            Naším cílem je být jedničkou na českém trhu v tomto
+                            segmentu. Orientujeme se na
+                            <b
+                                >dlouhodobá partnerství a hledání jedinečných
+                                řešení s přidanou hodnotou, která vás posunou
+                                vpřed.</b
+                            >
+                            Naše sebedůvěra stojí na silném stabilním zázemí a
+                            zkušenostech z tisíce náročných projektů pro
                             klienty, ktěří jsou špičkou v oboru. Držíme slovo i
-                            termíny, dokážeme přiznat a napravit chybu. Věříme sobě
-                            i vám.
+                            termíny, dokážeme přiznat a napravit chybu. Věříme
+                            sobě i vám.
                         </p>
                     </div>
                     <div class="about__body">
                         <p class="about__text">
-                            Pracujeme v liberálním a otevřeném prostředí bez kravat
-                            a procesních příruček. Inspirujeme se principy svobodné
-                            firmy, kde se zisky dělí transparentně, týmy si určují
-                            svá vlastní pravidla a management nemá nadstandardní
-                            benefity. Rádi společně sportujeme a podporujeme se.
-                            Kopeme za jeden tým.
+                            Pracujeme v liberálním a otevřeném prostředí bez
+                            kravat a procesních příruček. Inspirujeme se
+                            principy svobodné firmy, kde se zisky dělí
+                            transparentně, týmy si určují svá vlastní pravidla a
+                            management nemá nadstandardní benefity. Rádi
+                            společně sportujeme a podporujeme se. Kopeme za
+                            jeden tým
                         </p>
                         <p class="about__text">
-                            Není proto náhoda, že jsme se 4 roky po sobě
-                            umístili na třech nejvyšších příčkách v soutěži
-                            Best Employers ČR.
+                            Není proto náhoda, že jsme se
+                            <span
+                                class="tip"
+                                tabindex="0"
+                                aria-describedby="tip-bubble"
+                                >4 roky po sobě<span
+                                    class="tip__bubble"
+                                    id="tip-bubble"
+                                    role="tooltip"
+                                    >hustý, co?</span
+                                ></span
+                            >
+                            umístili na třech nejvyšších příčkách v soutěži Best
+                            Employers ČR.
                         </p>
                     </div>
                 </div>
             </section>
-            <section class="charts"></section>
+            <section class="charts">
+                <div class="charts__inner container">
+                    <div class="charts__group">
+                    <h2 class="charts__title">Návštěvnost firmy</h2>
+
+                    <div class="chart">
+                        <div class="chart__icons">
+                            <img
+                                class="chart__logo"
+                                src="/etnetera-small.svg"
+                                alt=""
+                                aria-hidden="true"
+                                width="30"
+                                height="40"
+                            />
+                            <svg
+                                class="chart__icon"
+                                viewBox="0 0 24 24"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <circle cx="12" cy="12" r="9" />
+                                <path
+                                    d="M12 7v5l3 2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+
+                        <ul class="chart__bars"></ul>
+                    </div>
+
+                    <ul class="chart__legend">
+                        <li class="chart__legend-item chart__legend-item--low">
+                            <span class="chart__legend-dot"></span>bez fronty
+                        </li>
+                        <li
+                            class="chart__legend-item chart__legend-item--medium"
+                        >
+                            <span class="chart__legend-dot"></span>možnost
+                            fronty
+                        </li>
+                        <li class="chart__legend-item chart__legend-item--high">
+                            <span class="chart__legend-dot"></span>pravděpodobné
+                            čekání ve frontě
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </section>
             <section class="columns">
                 <div class="columns__inner container">
                     <div class="columns__col">
-                    <h2 class="columns__title">Chceš být naším parťákem?</h2>
-                    <p class="columns__lead">Měl(a) bys:</p>
-                    <ul class="columns__list columns__list--check">
-                        <li>
-                            Žít HTML5, CSS3. Doslova.Tento jazyk Ti občas
-                            připadá přirozenější než čeština.
-                        </li>
-                        <li>Znát Javascript.</li>
-                        <li>
-                            Nad pojmy ES6/7, React a Redux bys neměl bezradně
-                            krčit rameny, ale bezpečně je znát.
-                        </li>
-                        <li>
-                            Node.js je Tvůj dobrý kamarád, který používáš při
-                            buildování
-                        </li>
-                        <li>
-                            Velkou výhodu představují dobré vztahy s dalšími JS
-                            frameworky. Tzn. pokud si tykáš třeba s Angular,
-                            Vue.js či Vanilla JS.
-                        </li>
-                        <li>
-                            Uvedené technologie Tě zajímají, ale nemáš s nimi
-                            moc zkušeností? Nevadí, stav se k nám na kafe,
-                            probereme, co se s tím dá dělat.
-                        </li>
-                    </ul>
-                </div>
+                        <h2 class="columns__title">
+                            Chceš být naším parťákem?
+                        </h2>
+                        <p class="columns__lead">Měl(a) bys:</p>
+                        <ul class="columns__list columns__list--check">
+                            <li>
+                                Žít HTML5, CSS3. Doslova.Tento jazyk Ti občas
+                                připadá přirozenější než čeština.
+                            </li>
+                            <li>Znát Javascript.</li>
+                            <li>
+                                Nad pojmy ES6/7, React a Redux bys neměl
+                                bezradně krčit rameny, ale bezpečně je znát.
+                            </li>
+                            <li>
+                                Node.js je Tvůj dobrý kamarád, který používáš
+                                při buildování
+                            </li>
+                            <li>
+                                Velkou výhodu představují dobré vztahy s dalšími
+                                JS frameworky. Tzn. pokud si tykáš třeba s
+                                Angular, Vue.js či Vanilla JS.
+                            </li>
+                            <li>
+                                Uvedené technologie Tě zajímají, ale nemáš s
+                                nimi moc zkušeností? Nevadí, stav se k nám na
+                                kafe, probereme, co se s tím dá dělat.
+                            </li>
+                        </ul>
+                    </div>
                     <div class="columns__col">
                         <h2 class="columns__title">Co za to dostaneš?</h2>
-                    <p class="columns__lead">Budeme si tě hýčkat např.:</p>
-                    <ol class="columns__list columns__list--numbered">
-                        <li>
-                            Komfortním pracovním prostředím, které je unikátní
-                            kombinací kanceláří, tělocvičny, odpočinkových
-                            prostor a kavárny. U nás se strohé prostředí a
-                            nažehlené límečky fakt nenosí.
-                        </li>
-                        <li>
-                            Pestrým koktejlem takových těch typických benefitů
-                            jako jsou třeba stravenková platební karta,
-                            Multisport karta, příspěvky na vzdělání, dopravu a
-                            další.
-                        </li>
-                        <li>
-                            Možností pořádně si oddychnout. Nejen v našich
-                            relaxačních prostorech, ale třeba na pláži v
-                            exotice. Díky 5 týdnům placené dovolené.
-                        </li>
-                        <li>
-                            Inspirativním prostředím plným zajímavých lidí,
-                            které stojí za to poznat. Organizujeme pravidelné
-                            TechLunche, kdy nad lahodnou pizzou sdílíme naše
-                            nové poznatky a vědomosti.
-                        </li>
-                        <li>
-                            A hlavně… svobodou!!! Budeme rádi, pokud s námi
-                            budeš v kanceláři, ale rozumíme tomu, že někdy budeš
-                            chtít pracovat i odjinud. Zároveň chápeme, že
-                            každému z nás vyhovuje jiná pracovní doba a
-                            zařízení, na kterém pracuje. Pojďme se pobavit o
-                            tvých preferencích, určitě se domluvíme.
-                        </li>
-                    </ol>
-                </div>
+                        <p class="columns__lead">Budeme si tě hýčkat např.:</p>
+                        <ol class="columns__list columns__list--numbered">
+                            <li>
+                                Komfortním pracovním prostředím, které je
+                                unikátní kombinací kanceláří, tělocvičny,
+                                odpočinkových prostor a kavárny. U nás se strohé
+                                prostředí a nažehlené límečky fakt nenosí.
+                            </li>
+                            <li>
+                                Pestrým koktejlem takových těch typických
+                                benefitů jako jsou třeba stravenková platební
+                                karta, Multisport karta, příspěvky na vzdělání,
+                                dopravu a další.
+                            </li>
+                            <li>
+                                Možností pořádně si oddychnout. Nejen v našich
+                                relaxačních prostorech, ale třeba na pláži v
+                                exotice. Díky 5 týdnům placené dovolené.
+                            </li>
+                            <li>
+                                Inspirativním prostředím plným zajímavých lidí,
+                                které stojí za to poznat. Organizujeme
+                                pravidelné TechLunche, kdy nad lahodnou pizzou
+                                sdílíme naše nové poznatky a vědomosti.
+                            </li>
+                            <li>
+                                A hlavně… svobodou!!! Budeme rádi, pokud s námi
+                                budeš v kanceláři, ale rozumíme tomu, že někdy
+                                budeš chtít pracovat i odjinud. Zároveň chápeme,
+                                že každému z nás vyhovuje jiná pracovní doba a
+                                zařízení, na kterém pracuje. Pojďme se pobavit o
+                                tvých preferencích, určitě se domluvíme.
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </section>
             <section class="articles">
-                <article>
-                    <h2>Sdílení vědomostí</h2>
-                    <p>
-                        Inspirativní prostředí plné zajímavých lidí, které stojí
-                        za to poznat. Organizujeme pravidelné TechLunche, kdy
-                        nad lahodnou pizzou sdílíme naše nové poznatky a
-                        vědomosti.
-                    </p>
-                    <div>
-                        <p>11. ledna</p>
-                        <p>#etnplesk</p>
-                    </div>
-                </article>
-                <article>
-                    <h2>O lidi se staráme někdy víc než o klienty</h2>
-                    <p>
-                        Inspirativní prostředí plné zajímavých lidí, které stojí
-                        za to poznat. Organizujeme pravidelné TechLunche, kdy
-                        nad lahodnou pizzou sdílíme naše nové poznatky a
-                        vědomosti.
-                    </p>
-                    <div>
-                        <p>12 . ledna</p>
-                        <p>#etnplesk</p>
-                    </div>
-                </article>
-                <article>
-                    <h2>Jaké u nás dostaneš benefity?</h2>
-                    <p>
-                        Pestrým koktejlem takových těch typických benefitů jako
-                        jsou třeba stravenková platební karta, Multisport karta,
-                        příspěvky na vzdělání, dopravu a penzijní pojištění.
-                    </p>
-                    <div>
-                        <p>12. ledna</p>
-                        <p>#etnplesk</p>
-                    </div>
-                </article>
+                <div class="articles__inner container">
+                    <article class="card">
+                        <h2 class="card__title">Sdílení vědomostí</h2>
+                        <p class="card__text">
+                            Inspirativní prostředí plné zajímavých lidí, které
+                            stojí za to poznat. Organizujeme pravidelné
+                            TechLunche, kdy nad lahodnou pizzou sdílíme naše
+                            nové poznatky a vědomosti.
+                        </p>
+                        <div class="card__footer">
+                            <p class="card__date">11. ledna</p>
+                            <p class="card__tag">#etnplesk</p>
+                        </div>
+                    </article>
+                    <article class="card card--inverse">
+                        <h2 class="card__title">
+                            O lidi se staráme někdy víc než o klienty
+                        </h2>
+                        <p class="card__text">
+                            Inspirativní prostředí plné zajímavých lidí, které
+                            stojí za to poznat. Organizujeme pravidelné
+                            TechLunche, kdy nad lahodnou pizzou sdílíme naše
+                            nové poznatky a vědomosti.
+                        </p>
+                        <div class="card__footer">
+                            <p class="card__date">12. ledna</p>
+                            <p class="card__tag">#etnplesk</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h2 class="card__title">
+                            Jaké u nás dostaneš benefity?
+                        </h2>
+                        <p class="card__text">
+                            Pestrým koktejlem takových těch typických benefitů
+                            jako jsou třeba stravenková platební karta,
+                            Multisport karta, příspěvky na vzdělání, dopravu a
+                            penzijní pojištění.
+                        </p>
+                        <div class="card__footer">
+                            <p class="card__date">12. ledna</p>
+                            <p class="card__tag">#etnplesk</p>
+                        </div>
+                    </article>
+                </div>
             </section>
         </main>
-        <footer>
-            <p>copyright</p>
-            <p>© 2019 Etnetera</p>
-            <p>Jsme hrdým členem Etnetera Group</p>
+        <footer class="footer">
+            <div class="footer__inner container">
+                <p class="footer__copyright">Copyright</p>
+                <p class="footer__year">© 2019 Etnetera</p>
+                <p class="footer__member">
+                    Jsme hrdým členem
+                    <a href="#" class="footer__link">Etnetera Group</a>
+                </p>
+            </div>
         </footer>
+
+        <div class="newsletter">
+            <button
+                type="button"
+                class="newsletter__toggle"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="newsletter-popup"
+                aria-label="Přihlásit se k odběru novinek"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#fff"
+                    aria-hidden="true"
+                    focusable="false"
+                >
+                    <path
+                        d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
+                    />
+                </svg>
+            </button>
+
+            <div
+                class="newsletter__popup"
+                id="newsletter-popup"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="newsletter-popup-title"
+                inert
+            >
+                <button
+                    type="button"
+                    class="newsletter__close"
+                    aria-label="Zavřít"
+                >
+                    &times;
+                </button>
+
+                <h2 id="newsletter-popup-title" class="newsletter__title">
+                    Dostávejte články přímo do vaší e-mailové schránky!
+                </h2>
+
+                <form class="newsletter__form" novalidate>
+                    <label for="newsletter-email" class="newsletter__label"
+                        >Vaše e-mailová adresa</label
+                    >
+                    <input
+                        type="email"
+                        id="newsletter-email"
+                        name="email"
+                        class="newsletter__input"
+                        required
+                        autocomplete="email"
+                    />
+
+                    <div class="newsletter__hp" aria-hidden="true">
+                        <label for="newsletter-website"
+                            >Nechte prosím prázdné</label
+                        >
+                        <input
+                            type="text"
+                            id="newsletter-website"
+                            name="website"
+                            class="newsletter__hp-input"
+                            tabindex="-1"
+                            autocomplete="off"
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn--primary newsletter__submit"
+                    >
+                        Odeslat
+                    </button>
+
+                    <p class="newsletter__legal">
+                        Podmínky zpracování osobních údajů („Podmínky")
+                        poskytují informace o shromažďování, zaznamenání,
+                        používání a jiného zpracování osobních údajů společností
+                        Etnetera a.s. se sídlem Jankovcova 1037/49, 170 00 Praha
+                        7, IČO: 25103814, zapsaná u MS Praha, sp.zn. B 11168,
+                        jakožto správcem osobních údajů.
+                    </p>
+                </form>
+
+                <p class="newsletter__success" hidden>Děkujeme za vyplnění!</p>
+            </div>
+        </div>
 
         <script type="module" src="/src/main.ts"></script>
     </body>

@@ -35,6 +35,10 @@
     &__text {
         margin-bottom: 1rem;
 
+        a{
+            color: var(--c-primary);
+        }
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -58,6 +62,9 @@
         font-size: v.$font-size-small;
         text-decoration: none;
         white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
 
         &::after {
             content: "";
@@ -68,5 +75,12 @@
             border: 6px solid transparent;
             border-top-color: #2b2b2b;
         }
+    }
+
+    &:hover &__bubble,
+    &:focus &__bubble,
+    &:focus-within &__bubble {
+        opacity: 1;
+        visibility: visible;
     }
 }

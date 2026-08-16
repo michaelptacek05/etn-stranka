@@ -20,11 +20,11 @@
     }
 
     &__title {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     &__lead {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     &__list {
@@ -69,7 +69,7 @@
                 position: absolute;
                 left: 0;
                 color: var(--c-primary);
-                font-weight: 700;
+                font-weight: 500;
             }
         }
     }

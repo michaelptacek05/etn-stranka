@@ -8,12 +8,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-direction: column;
+        flex-direction: row;
         gap: 1.5rem;
         padding-block: 1.5rem;
     }
 
     &__logo {
+        position: relative;
+        z-index: 1000;
         display: block;
         flex-shrink: 0;
     }
@@ -53,9 +55,11 @@
 .nav {
     position: fixed;
     inset: 0;
+    z-index: 999;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    padding-right: 2rem;
     background-color: var(--c-bg);
     visibility: hidden;
     transform: translateX(100%);
@@ -63,10 +67,24 @@
         transform 0.3s ease,
         visibility 0s linear 0.3s;
 
+    &__close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        line-height: 1;
+        color: var(--c-text);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--c-primary);
+        }
+    }
+
     &__list {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
         gap: 2rem;
         list-style: none;
     }
@@ -76,7 +94,7 @@
         padding-block: 0.25rem;
         font-size: v.$font-size-h2;
         font-weight: 400;
-        
+                
         text-transform: uppercase;
         color: var(--c-text);
 
@@ -84,7 +102,7 @@
         &:focus-visible {
             color: var(--c-primary);
             text-decoration: underline;
-            text-underline-offset: 0.3em;
+            text-underline-offset: 0.3em; 
         }
     }
 
@@ -96,6 +114,10 @@
         visibility: visible;
         transform: none;
         transition: none;
+
+        &__close {
+            display: none;
+        }
 
         &__list {
             flex-direction: row;
@@ -112,5 +134,4 @@
     visibility: visible;
     transform: translateX(0);
     transition: transform 0.3s ease;
-    z-index: 999;
 }

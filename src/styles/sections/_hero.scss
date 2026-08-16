@@ -2,7 +2,7 @@
 
 .hero {
     position: relative;
-    height: 26rem;
+    height: 32rem;
     overflow: hidden;
 }
 
@@ -41,11 +41,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 2rem;
 
-    // vyšší specificita než .container, aby ho spolehlivě přebilo
     .hero & {
         padding-inline: 3rem;
+    }
+
+    p{
+        max-width: 60ch;
     }
 }
 
@@ -86,6 +89,18 @@
         &:focus-visible {
             background-color: var(--c-primary);
             color: var(--c-bg);
+        }
+    }
+
+    &--primary {
+        border: 1px solid var(--c-primary);
+        background-color: var(--c-primary);
+        color: var(--c-bg);
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--c-primary-dark);
+            border-color: var(--c-primary-dark);
         }
     }
 }

@@ -1,0 +1,59 @@
+@use "../variables" as v;
+
+.articles {
+    background-color: var(--c-bg);
+    padding-block: 3rem;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @include v.mq(md) {
+            flex-direction: row;
+            align-items: stretch;
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+
+    &__title {
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        text-align: left;
+        font-size: v.$font-size-small;
+    }
+
+    &__date {
+        text-transform: uppercase;
+    }
+
+    &__tag {
+        color: var(--c-primary);
+        font-weight: 700;
+    }
+
+    &--inverse {
+        background-color: #000;
+        border-color: #000;
+        color: var(--c-bg);
+    }
+}
